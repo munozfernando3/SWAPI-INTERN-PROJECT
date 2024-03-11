@@ -6,7 +6,7 @@ import { PeopleList, ShipsList } from '../components/ListPageComponents/Lists';
 import '../styles/ListPage.scss'
 
 const ListPagePeople = () => {
-  const { filteredPeople, isLoadingPeople, peopleError, nameFilter, hairColorFilter, setNameFilter, setHairFilter } = useFilteredPeople();
+  const { filteredPeople, isLoadingPeople, peopleError, nameFilter, setNameFilter } = useFilteredPeople();
 
   if (isLoadingPeople) {
     return <div> <Loading /> </div>
