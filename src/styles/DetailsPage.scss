@@ -1,0 +1,20 @@
+.details-content, .ship-details-content {
+  margin: 10px 0;
+  line-height: 1.6;
+  color: #cccccc;
+  font-family: 'deathstar';
+}
+
+section {
+  margin-top: 30px;
+}
+
+.detail-subtitle {
+  color: #05478a; 
+  font-weight: bold; 
+  margin-right: 10px;
+
+  .ship-details-content & {
+    color: #076e4b;
+  }
+}

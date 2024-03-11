@@ -1,0 +1,40 @@
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: black;
+
+  .skip-button, .play-button {
+    position: absolute;
+    bottom: 20px;
+    font-size: 24px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: yellow;
+    }
+  }
+
+  .play-button {
+    left: 20px;
+    font-size: 2em;
+    z-index: 10;
+  }
+
+  .skip-button {
+    right: 20px;
+
+    i {
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+}
