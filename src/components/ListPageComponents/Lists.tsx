@@ -31,7 +31,7 @@ export const ShipsList:React.FC<ShipsListProps>=({data, filter})=>
            const {beforeMatch,matchText,afterMatch}=stringNameHighlighter(item,filter)
             return (
               <div className='ship-item'>
-                <Link to={`/starShips/${extractIdFromUrl(item.url)}`}>{/*If null it will render in React Router this means it will skip to the next one*/}
+                <Link to={`/starShips/${item.uid}`}>{/*If null it will render in React Router this means it will skip to the next one*/}
                   <li key={index} >
                     {beforeMatch}
                     <span style={{ color: '#0a8459' }}>{matchText}</span>

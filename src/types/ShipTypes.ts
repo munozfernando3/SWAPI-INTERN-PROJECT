@@ -14,5 +14,6 @@ interface Ship {
   consumables: string; 
   films: string[]; 
   pilots: string[];
-  url:string;
+  url: string;
+  uid:string;
 }

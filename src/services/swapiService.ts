@@ -12,11 +12,14 @@ export const fetchDetailsURL= async (url:string) => {
 };
 
 export const fetchDetailsURLArray = async <T>(urls: string[]): Promise<T[]> => {
-  const promises = urls.map(url => axios.get<T>(url).then(response => response.data));
-  const results = await Promise.all(promises);
+  const results = await Promise.all(
+    urls.map(async (url) => {
+      const { data } = await axios.get(url);      // <- no <T> here
+      return (data as any).result.properties as T; // swapi.tech single item
+    })
+  );
   return results;
 };
-
 
 export const fetchPeople = async () => {
   const page1 = await fetchPage(`${BASE_URL}/people/?page=1`);
