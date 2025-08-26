@@ -1,13 +1,14 @@
 import React from 'react';
 export const PersonMainDetails: React.FC<{ person: Person | undefined }> = ({ person }) => {
-return  <div>
+  console.log("Rendering PersonMainDetails with person:", person);
+return  (<div>
 <p><span className="detail-subtitle">Height:</span> {person?.height}</p>
 <p><span className="detail-subtitle">Mass:</span> {person?.mass}</p>
 <p><span className="detail-subtitle">Hair Color:</span> {person?.hair_color}</p>
 <p><span className="detail-subtitle">Eye Color:</span> {person?.eye_color}</p>
 <p><span className="detail-subtitle">Birth Year:</span> {person?.birth_year}</p>
 <p><span className="detail-subtitle">Gender:</span> {person?.gender}</p>
-</div>
+</div>)
 };
 export const ShipMainDetails: React.FC<{ ship: Ship | undefined }> = ({ ship}) => {
   return  <div className="ship-details-content">

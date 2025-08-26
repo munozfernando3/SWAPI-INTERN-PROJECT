@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'https://swapi.dev/api/';
+const BASE_URL = 'https://www.swapi.tech/api/';
 
 
 const fetchPage = async (url: string) => {
@@ -8,7 +8,7 @@ const fetchPage = async (url: string) => {
 };
 export const fetchDetailsURL= async (url:string) => {
   const response = await axios.get(url);
-  return response.data
+  return response.data.result.properties;
 };
 
 export const fetchDetailsURLArray = async <T>(urls: string[]): Promise<T[]> => {
@@ -32,8 +32,8 @@ export const fetchShips = async () => {
 
 export const fetchById = async (id: string, type: string) => {
   try {
-    const response = await axios.get(`https://swapi.dev/api/${type}/${id}/`);
-    return response.data;  
+    const response = await axios.get(`https://www.swapi.tech/api/${type}/${id}/`);
+    return response.data.result.properties;  
   } catch (error) {
     return null; 
   }

@@ -10,8 +10,9 @@ export const useFilteredPeople = () => {
   const [nameFilter, setNameFilter] = useState('');
   const [hairColorFilter, setHairFilter] = useState('');
   const filteredPeople = peopleData?.filter(person =>
-    person.name.toLowerCase().includes(nameFilter.toLowerCase()) &&
-    person.hair_color.toLowerCase().includes(hairColorFilter.toLowerCase())
+    person.name.toLowerCase().includes(nameFilter.toLowerCase())
+    // &&
+    // person.hair_color.toLowerCase().includes(hairColorFilter.toLowerCase())
   ).slice(0, 20);
   return { filteredPeople, isLoadingPeople, peopleError, nameFilter, hairColorFilter, setNameFilter, setHairFilter };
 }
@@ -24,8 +25,9 @@ export const useFilteredShips = () => {
   const [nameFilter, setNameFilter] = useState('');
   const [modelFilter, setModelFilter] = useState('');
   const filteredShips = shipData?.filter(ship =>
-    ship.name.toLowerCase().includes(nameFilter.toLowerCase()) &&
-    ship.model.toLowerCase().includes(modelFilter.toLowerCase())
+    ship.name.toLowerCase().includes(nameFilter.toLowerCase())
+    // &&
+    // ship.model.toLowerCase().includes(modelFilter.toLowerCase())
   ).slice(0, 20);
   return { filteredShips, isLoadingShips, shipsError, nameFilter, modelFilter, setNameFilter, setModelFilter };
 }

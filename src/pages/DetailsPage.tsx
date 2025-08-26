@@ -12,9 +12,13 @@ import { Pilots } from '../components/Details/Pilots';
 
 const PeopleDetailsPage = () => {
   const params = useParams<{ id?: string }>(); // Specifies the shape of the object that useParams is expected to return: string
-  const id = params.id!; // tells the compiler you are certain params.id will not be null or undefined at runtime, even though its type (string | undefined) suggests it 
+  
+  const id = params.id!; // tells the compiler you are certain params.id will not be null or undefined at runtime, even though its type (
+  // string | undefined) suggests it 
+  console.log("ID from params:", id);
   const { data: person, isLoading: isLoading, error: error } = useDetails<Person>(id, 'people');
-  if (isLoading) return <Loading />;
+  console.log("Fetched person data:", person);
+  if (isLoading) return <Loading />
   if (error) {
     return <div>Error: {error.message}</div>;
   }
@@ -26,7 +30,7 @@ const PeopleDetailsPage = () => {
         <Homeworld person={person} />
         <Species person={person} />
       </div>
-      <Films person={person} />
+      {/* <Films person={person} /> */}
       <Starships person={person} />
       <Vehicles person={person} />
     </div>

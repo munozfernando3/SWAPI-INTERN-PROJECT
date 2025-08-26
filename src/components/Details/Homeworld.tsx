@@ -7,5 +7,6 @@ export const Homeworld: React.FC<{ person: Person | undefined }> = ({ person }) 
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+  console.log("Rendering Homeworld with homeworld:", homeworld?.name);
   return (<p><span className="detail-subtitle">Homeworld:</span> {homeworld?.name}</p>)
 };

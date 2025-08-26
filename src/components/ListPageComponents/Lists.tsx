@@ -10,7 +10,7 @@ export const PeopleList:React.FC<PeopleListProps>=({data, filter})=>
            const {beforeMatch,matchText,afterMatch}=stringNameHighlighter(item,filter)
             return (
               <div className='person-item'>
-                <Link to={`/people/${extractIdFromUrl(item.url)}`}>{/*If null it will render in React Router this means it will skip to the next one*/}
+                <Link to={`/people/${item.uid}`}>{/*If null it will render in React Router this means it will skip to the next one*/}
                   <li key={index}>
                     {beforeMatch}
                     <span style={{ color: '#05478a' }}>{matchText}</span>

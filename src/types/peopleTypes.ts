@@ -13,7 +13,8 @@ interface Person
     species: string[]; // An array of strings, each string being a URL to a species resource
     vehicles: string[]; // An array of strings, each string being a URL to a vehicle resource
     starships: string[]; // An array of strings, each string being a URL to a starship resource
-    url:string;
+  url: string;
+  uid:string;
   }
   interface Film {
     title: string;

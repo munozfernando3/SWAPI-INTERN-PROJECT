@@ -14,7 +14,8 @@ export const useShipsQuery = () => {
     queryFn: () => fetchShips()
   })
 }
-export const useDetailQuery = <T>(url: string, queryKey: string)=> {
+export const useDetailQuery = <T>(url: string, queryKey: string) => {
+  console.log("useDetailQuery called with url:", url, "and queryKey:", queryKey);
   return useQuery<T>({
     queryKey: [queryKey],
     queryFn: () => fetchDetailsURL(url),
